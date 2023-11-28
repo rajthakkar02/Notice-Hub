@@ -1,0 +1,35 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>All Notice</title>
+    <link rel="stylesheet" href="{%static 'user/css/style.css'%}">
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Notice Hub</h1>
+    </div>
+
+    <div class="content">
+        <h2>Latest Notice</h2>
+        {% for row in result %}
+        <div class="notice">
+            <h3>{{row.subject}}</h3>
+            <p class="desc">{{row.description}}</p>
+            <p class="date">Created at: {{row.created_at}}</p>
+            <p class="date">Updated at: {{row.updated_at}}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="footer">
+        <p>©️Copyright.All rights reserved</p>
+    </div>
+
+</body>
+
+</html>
